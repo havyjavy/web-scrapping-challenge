@@ -15,9 +15,7 @@ browser = Browser('chrome', **executable_path, headless=False)
 
 def scrape():
 
-    listings = []
-
-
+    
     url = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest'
     browser.visit(url)
 
@@ -108,10 +106,10 @@ def scrape():
 
 
 
-    {"news_title": results,
+    return {"news_title": results,
     "news_p": results2,
     "featured_image_url": feauture_image_url,
-    "table": mars_facts
+    "table": mars_facts,
     "hemisphere_url": [hemis1, hemis2, hemis3, hemis4]
 
     }
